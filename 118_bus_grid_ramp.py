@@ -131,7 +131,7 @@ def samp_dist():
     # samp_dist = functools.partial(random.expovariate, 1.0)
     return random.choice(samp_dist_list)
 
-
+#generate values if non exist and vice-versa
 def att_values_check(last):
     if not last:
         return random.sample(range(1, 118), 5)
@@ -161,7 +161,7 @@ BIG_PACKETS = []
 # Execute the simulation
 if __name__ == '__main__':
     att_values = []
-
+    #determines the number of iterations to run
     for step in range(230):
         # print(step)
 
@@ -170,6 +170,7 @@ if __name__ == '__main__':
         inter_arrivals = []
         p_count = []
 
+        # generate values every 100 steps
         if (step % 100) == 99:
             att_values = att_values_check(att_values)
         elif att_values:
